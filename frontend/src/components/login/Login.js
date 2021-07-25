@@ -1,4 +1,4 @@
-import { Container, TextField } from "@material-ui/core";
+import { Button, Container, TextField } from "@material-ui/core";
 import React, { useState } from "react";
 export default function Login() {
   // Potential refactoring???
@@ -17,27 +17,35 @@ export default function Login() {
   //   );
   //   return [value, input];
   // };
+  const loginOnClick = () => {
+    return null;
+  };
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   return (
     <Container>
-      <TextField
-        id="username"
-        value={username}
-        label="Username"
-        variant="outlined"
-        type="text"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <TextField
-        id="password"
-        value={password}
-        label="Password"
-        variant="outlined"
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <form>
+        <TextField
+          id="username"
+          value={username}
+          label="Username"
+          variant="outlined"
+          type="text"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <TextField
+          id="password"
+          value={password}
+          label="Password"
+          variant="outlined"
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button label="submit" type="submit" onClick={() => loginOnClick}>
+          Login
+        </Button>
+      </form>
     </Container>
   );
 }
